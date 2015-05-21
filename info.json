@@ -1,0 +1,9 @@
+{
+  "name": "InventoryUpgrade",
+  "version": "0.0.1",
+  "title": "Inventory Upgrades",
+  "author": "Daedeross",
+  "contact": "daedeross@gmail.com",
+  "homepage": "",
+  "description": "Adds upgrades to the player's inventory size."
+}
