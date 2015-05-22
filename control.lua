@@ -31,7 +31,7 @@ game.onevent(defines.events.onplayercreated, function(event)
     local player_index = event.playerindex
     local player = game.players[player_index]
     if player ~= nil then
-        --game.player.print("Here")
+        game.players[1].print("Here")
         local u_level = 0
         local tech_prefix = "inventory-upgrade-"
         
@@ -53,7 +53,7 @@ end)
 --[[
 game.onevent(defines.events.onentitydied, function(event)
     if event.entity.type == "player" then
-        game.createntity{}
+        game.createentity{name = new_proto.name,
     end
 end)
 ]]--
