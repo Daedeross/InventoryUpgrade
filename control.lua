@@ -26,21 +26,23 @@ game.onevent(defines.events.onresearchfinished, function(event)
 end)
 
 game.onevent(defines.events.onplayercreated, function(event)
+    --game.player.print("Player Created")
+    --game.player.print(event.playerindex)
     local player_index = event.playerindex
-    local player = game.players[playerindex]
+    local player = game.players[player_index]
     if player ~= nil then
+        --game.player.print("Here")
         local u_level = 0
         local tech_prefix = "inventory-upgrade-"
-        
         
         for i=1, MaxInventoryUpgrades do
             local tech_name = tech_prefix .. i
             if player.force.technologies[tech_name].researched then
-                index  = i
+                u_level  = i
             end
         end
         
-        if i > 0 then
+        if u_level > 0 then
             local proto_name = string.format("%s%i", "player-", u_level)
             local new_proto = game.entityprototypes[proto_name]
             
@@ -48,3 +50,10 @@ game.onevent(defines.events.onplayercreated, function(event)
         end 
     end 
 end)
+--[[
+game.onevent(defines.events.onentitydied, function(event)
+    if event.entity.type == "player" then
+        game.createntity{}
+    end
+end)
+]]--

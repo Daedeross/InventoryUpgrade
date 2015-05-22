@@ -1,7 +1,7 @@
 module("createNewCharacter", package.seeall)
 
 function main (player, new_proto)
-    game.player.print("bar")
+    --game.player.print("bar")
     local old_player = player
     local player_pos = game.findnoncollidingposition(old_player.character.prototype.name, old_player.position, 25, 1)
     local new_player = game.createentity{name = new_proto.name, position=player_pos, force=player.force}
